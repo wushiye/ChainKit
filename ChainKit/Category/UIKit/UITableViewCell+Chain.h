@@ -12,19 +12,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UITableViewCell (Chain)
 
-typedef UITableViewCell* __nullable (^CTCCellInitReuseHandle)(Class _Nonnull, UITableView * _Nonnull);
+typedef id __nullable (^CTCCellInitReuseHandle)(Class _Nonnull, UITableView * _Nonnull);
 
-+ (CTCCellInitReuseHandle)ctc_cellReuseNibLoadByClassTableView;
+//+ (CTCCellInitReuseHandle)ctc_cellReuseNibLoadByClassTableView;
 
-+ (CTCCellInitReuseHandle)ctc_cellReuseByClassTableView;
+//+ (CTCCellInitReuseHandle)ctc_cellReuseByClassTableView;
 
 
-
-typedef UITableViewCell* __nullable (^CTCCellInitHandleCallback)(UITableView * _Nonnull);
+typedef id __nullable (^CTCCellInitHandleCallback)(UITableView * _Nonnull);
 
 + (CTCCellInitHandleCallback)ctc_cellReuseNibLoadForTableView;
 
 + (CTCCellInitHandleCallback)ctc_cellReuseForTableView;
+
+
 
 - (UITableViewCell* (^)(BOOL))ctc_selected;
 

@@ -10,7 +10,7 @@
 
 @implementation NSArray (Chain)
 
-- (COObjectAtIndex)ca_objectCheckAtIndex {
+- (id)ca_objectCheckAtIndex:(NSUInteger)index {
     return ^(NSUInteger index) {
         id object = nil;
         

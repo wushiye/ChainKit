@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UINavigationItem (Chain)
 
++ (UINavigationItem* (^)(void))cni_navigationItem;
+
 - (CNIItemHandleCallback)cni_leftBarButtonItem;
 
 - (CNIItemHandleCallback)cni_rightBarButtonItem;
@@ -23,8 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (CNIStringHandleCallback)cni_title;
 
 - (UINavigationItem* (^)(UIView * __nullable))cni_titleView;
-
-+ (UINavigationItem* (^)(void))cni_navigationItem;
 
 @end
 

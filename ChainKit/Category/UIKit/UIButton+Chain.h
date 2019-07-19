@@ -18,11 +18,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CBStringHandleCallback)cb_title;
 
-- (CBStringHandleCallback)cb_imageOfNamed;
+- (CBContentForStateHandle)cb_setTitleForState;
+
+- (CBStringHandleCallback)cb_setImageOfNamed;
+
+- (CBContentForStateHandle)cb_setImageOfNamedForState;
 
 - (CBRGBColorHandleCallback)cb_titleColorRGB;
 
+- (CBRGBColorForStateHandle)cb_setTitleColorOfRGBForState;
+
 - (CBColorHandleCallback)cb_titleColor;
+
+- (CBColorForStateHandle)cb_setTitleColorForState;
 
 - (CBValueHandleCallback)cb_fontSize;
 

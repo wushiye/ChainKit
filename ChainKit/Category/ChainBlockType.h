@@ -40,7 +40,13 @@ typedef UIView* _Nonnull (^CVTagHandleCallback)(NSInteger);
 
 typedef UIButton* _Nonnull (^CBRGBColorHandleCallback)(CGFloat, CGFloat, CGFloat);
 
+typedef UIButton* _Nonnull (^CBRGBColorForStateHandle)(CGFloat, CGFloat, CGFloat, UIControlState);
+
+typedef UIButton* _Nonnull (^CBColorForStateHandle)(UIColor * __nullable, UIControlState);
+
 typedef UIButton* _Nonnull (^CBStringHandleCallback)(NSString * __nullable);
+
+typedef UIButton* _Nonnull (^CBContentForStateHandle)(NSString * __nullable, UIControlState);
 
 typedef UIButton* _Nonnull (^CBColorHandleCallback)(UIColor * __nullable);
 
@@ -63,8 +69,6 @@ typedef UILabel* _Nonnull (^CLValueHandleCallback)(CGFloat);
 typedef UIColor* _Nonnull (^CColorRGBAHandleCallback)(CGFloat, CGFloat, CGFloat, CGFloat);
 
 typedef UIColor* _Nonnull (^CCHexColorHandleCallback)(NSString * __nullable);
-
-typedef id __nullable (^COObjectAtIndex)(NSUInteger);
 
 typedef BOOL (^CBBOOLHandleCallback)(void);
 

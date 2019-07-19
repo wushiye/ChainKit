@@ -177,10 +177,10 @@
     };
 }
 
-- (CAddTouchEventCompleted)cv_touchEventCallback {
+- (CAddTouchEventCompleted)cv_addTouchEventCallback {
     return ^(CTouchEventCallback __nullable touchCallback) {
         if (![self isKindOfClass:[UIView class]]) return;
-        objc_setAssociatedObject(self, @selector(cv_touchEventCallback), touchCallback, OBJC_ASSOCIATION_COPY);
+        objc_setAssociatedObject(self, @selector(cv_addTouchEventCallback), touchCallback, OBJC_ASSOCIATION_COPY);
         if (touchCallback) {
             self.userInteractionEnabled = YES;
             UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(vc_tapRecognizerAction)];
@@ -192,7 +192,7 @@
 - (void)vc_tapRecognizerAction {
     if (![self isKindOfClass:[UIView class]]) return;
     
-    CTouchEventCallback touchCallback = objc_getAssociatedObject(self, @selector(cv_touchEventCallback));
+    CTouchEventCallback touchCallback = objc_getAssociatedObject(self, @selector(cv_addTouchEventCallback));
     !touchCallback ?: touchCallback(self);
 }
 

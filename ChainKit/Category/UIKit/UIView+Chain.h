@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void (^CTouchEventCallback)(id);
 typedef void (^CAddTouchEventCompleted)(CTouchEventCallback __nullable);
 
-- (CAddTouchEventCompleted)cv_touchEventCallback;
+- (CAddTouchEventCompleted)cv_addTouchEventCallback;
 
 @end
 

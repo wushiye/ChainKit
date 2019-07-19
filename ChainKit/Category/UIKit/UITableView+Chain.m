@@ -20,7 +20,24 @@
 + (CTInitFrameStyleHandleCallback)ct_tableViewWithFrameStyle {
     return ^(CGFloat x, CGFloat y, CGFloat width, CGFloat height, UITableViewStyle style) {
         return [[self alloc] initWithFrame:CGRectMake(x, y, width, height) style:style];
-            
+    };
+}
+
+- (void (^)(NSArray<NSIndexPath *> * nonnull))ct_reloadRowsAtIndexPaths {
+    return ^(NSArray<NSIndexPath *> *indexPaths) {
+        [self reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
+    };
+}
+
+- (void (^)(NSIndexSet * nonnull))ct_reloadSections {
+    return ^(NSIndexSet *indexSet) {
+        [self reloadSections:indexSet withRowAnimation:UITableViewRowAnimationNone];
+    };
+}
+
+- (void (^)(NSIndexPath * nonnull))ct_scrollToRowAtIndexPath {
+    return ^(NSIndexPath *indexPath) {
+        [self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
     };
 }
 

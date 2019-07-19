@@ -33,7 +33,22 @@
     };
 }
 
-- (CBStringHandleCallback)cb_imageOfNamed {
+- (CBContentForStateHandle)cb_setTitleForState {
+    return ^(NSString * __nullable title, UIControlState state) {
+        [self setTitle:[title copy] forState:state];
+        return self;
+    };
+}
+
+
+- (CBContentForStateHandle)cb_setImageOfNamedForState {
+    return ^(NSString * __nullable imageNamed, UIControlState state) {
+        [self setImage:UIImage.ci_imageNamed(imageNamed) forState:state];
+        return self;
+    };
+}
+
+- (CBStringHandleCallback)cb_setImageOfNamed {
     return ^(NSString * __nullable imageName) {
         [self setImage:UIImage.ci_imageNamed(imageName) forState:UIControlStateNormal];
         return self;
@@ -47,9 +62,23 @@
     };
 }
 
+- (CBRGBColorForStateHandle)cb_setTitleColorOfRGBForState {
+    return ^(CGFloat red, CGFloat green, CGFloat blue, UIControlState state) {
+        [self setTitleColor:UIColor.cc_colorByRGBA(red, green, blue, 1.0f) forState:state];
+        return self;
+    };
+}
+
 - (CBColorHandleCallback)cb_titleColor {
     return ^(UIColor * __nullable titleColor) {
         [self setTitleColor:titleColor forState:UIControlStateNormal];
+        return self;
+    };
+}
+
+- (CBColorForStateHandle)cb_setTitleColorForState {
+    return ^(UIColor * __nullable titleColor, UIControlState state) {
+        [self setTitleColor:titleColor forState:state];
         return self;
     };
 }

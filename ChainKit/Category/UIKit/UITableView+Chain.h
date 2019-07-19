@@ -17,6 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (CTInitFrameStyleHandleCallback)ct_tableViewWithFrameStyle;
 
 
+- (void (^)(NSArray<NSIndexPath *> * nonnull))ct_reloadRowsAtIndexPaths;
+
+- (void (^)(NSIndexSet * nonnull))ct_reloadSections;
+
+- (void (^)(NSIndexPath * nonnull))ct_scrollToRowAtIndexPath;
+
+
 - (UITableView * (^)(id <UITableViewDataSource> __nullable))ct_dataSource;
 
 - (UITableView * (^)(id <UITableViewDelegate> __nullable))ct_delegate;

@@ -17,13 +17,13 @@ typedef NS_ENUM(NSUInteger, CTCTableViewCellType) {
 
 @implementation UITableViewCell (Chain)
 
-+ (CTCCellInitReuseHandle)ctc_cellReuseNibLoadByClassTableView {
-    return self.ctc_initWithTableViewClassType(CTCTableViewCellTypeNibInit);
-}
-
-+ (CTCCellInitReuseHandle)ctc_cellReuseByClassTableView {
-    return self.ctc_initWithTableViewClassType(CTCTableViewCellTypeInit);
-}
+//+ (CTCCellInitReuseHandle)ctc_cellReuseNibLoadByClassTableView {
+//    return self.ctc_initWithTableViewClassType(CTCTableViewCellTypeNibInit);
+//}
+//
+//+ (CTCCellInitReuseHandle)ctc_cellReuseByClassTableView {
+//    return self.ctc_initWithTableViewClassType(CTCTableViewCellTypeInit);
+//}
 
 
 

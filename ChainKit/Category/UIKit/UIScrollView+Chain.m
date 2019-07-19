@@ -101,11 +101,11 @@
 - (CSRefreshControlHandleCallback)cs_refreshControl {
     return ^(UIRefreshControl * __nullable refreshControl) {
         if ([self isKindOfClass:[UIScrollView class]]) {
-            if (@available(iOS 10.0, *)) { // iOS 10 SDK
+//            if (@available(iOS 10.0, *)) { // iOS 10 SDK
                 self.refreshControl = refreshControl;
-            } else {
+//            } else {
                 // Fallback on earlier versions
-            }
+//            }
         }
         return self;
     };

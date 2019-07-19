@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSArray (Chain)
 
-- (COObjectAtIndex)ca_objectCheckAtIndex;
+- (id)ca_objectCheckAtIndex:(NSUInteger)index;
 
 @end
 
