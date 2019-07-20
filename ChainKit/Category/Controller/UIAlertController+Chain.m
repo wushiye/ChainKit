@@ -10,6 +10,19 @@
 
 @implementation UIAlertController (Chain)
 
++ (CACConfirmHandler)cac_alertControllerWithTitleDescrCancelConfirmCompleted {
+    
+    return ^(NSString * title, NSString * descr, NSString *cancelTitle, NSString *confirmTitle, CHandleCallback confirmCallback) {
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:confirmTitle ?: @"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            if (confirmCallback) confirmCallback();
+        }]];
+        [alertController addAction:[UIAlertAction actionWithTitle:cancelTitle ?: @"取消" style:UIAlertActionStyleCancel handler:nil]];
+        return alertController;
+    };
+}
+
 + (CACSheetTitleItemsActionHandler)cac_alertControllerWithTitleSheetNamesSelectedCompleted {
     
     return ^(NSString *title, NSArray<NSString *> *itemNames, CACSelectedSheetHandler selectedCallback) {

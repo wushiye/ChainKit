@@ -60,15 +60,22 @@
 
 #pragma mark - UIAlertController
 
+- (CVCAlertConfrimHandler)cvc_showAlertControllerByTitleDescrConfirmCompleted {
+    return ^ (NSString * __nullable title, NSString * __nullable descr, NSString * __nullable confirmTitle, CHandleCallback __nullable confirmCallback) {
+        UIAlertController *alertController = UIAlertController.cac_alertControllerWithTitleDescrCancelConfirmCompleted(title, descr, nil, confirmTitle, confirmCallback);
+        self.cvc_presentVCAnimatedCompletion(alertController, YES, nil);
+    };
+}
+
 - (CVCAlertTitleSheetItemsActionHandler)cvc_showSheetControllerByTitleNamesCompleted {
-    return ^ (NSString * title, NSArray<NSString *> * itemNames, CACSelectedSheetHandler selectedHandler) {
+    return ^ (NSString * __nullable title, NSArray<NSString *> * _Nonnull itemNames, CACSelectedSheetHandler __nullable selectedHandler) {
         UIAlertController *alertController = UIAlertController.cac_alertControllerWithTitleSheetNamesSelectedCompleted(title, itemNames, selectedHandler);
         self.cvc_presentVCAnimatedCompletion(alertController, YES, nil);
     };
 }
 
 - (CVCAlertInputTextsHandler)cvc_showInputControllerByTitlePlaceholdersCompleted {
-    return ^ (NSString * title, NSArray<NSString *> * placeholders, CACInputTextFieldTextsHandler inputComplete) {
+    return ^ (NSString * __nullable title, NSArray<NSString *> * _Nonnull placeholders, CACInputTextFieldTextsHandler __nullable inputComplete) {
         UIAlertController *alertController = UIAlertController.cac_alertControllerWithTitlePlaceholdersForInputCompleted(title, placeholders, inputComplete);
         self.cvc_presentVCAnimatedCompletion(alertController, YES, nil);
     };

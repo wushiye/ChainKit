@@ -13,9 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIAlertController (Chain)
 
++ (CACConfirmHandler)cac_alertControllerWithTitleDescrCancelConfirmCompleted;
+
 + (CACSheetTitleItemsActionHandler)cac_alertControllerWithTitleSheetNamesSelectedCompleted;
 
 + (CACInputTextFieldsHandler)cac_alertControllerWithTitlePlaceholdersForInputCompleted;
+
+
 
 @end
 
