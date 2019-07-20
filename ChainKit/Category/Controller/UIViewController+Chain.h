@@ -22,6 +22,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void (^ __nullable)(BOOL))cvc_automaticallyAdjustsScrollViewInsets;
 
+
+
+#pragma mark - UIAlertController
+
+/**
+ e.g.
+ self.cvc_showSheetControllerByTitleNamesCompleted(@"SheetAlertVC", @[@"第0项", @"第1项", @"第2项"], ^(NSUInteger index) {
+ DLog(@"index == %lu", index);
+ });
+ */
+- (CVCAlertTitleSheetItemsActionHandler)cvc_showSheetControllerByTitleNamesCompleted;
+
+/**
+ e.g.
+ weak_self.cvc_showInputControllerByTitlePlaceholdersCompleted(@"TextFields AlertVC", @[@"请输入第0项", @"请输入第1项", @"请输入第2项"], ^(NSArray<NSString *> * texts) {
+ DLog(@"input texts == %@", texts);
+ });
+ */
+- (CVCAlertInputTextsHandler)cvc_showInputControllerByTitlePlaceholdersCompleted;
+
 @end
 
 NS_ASSUME_NONNULL_END

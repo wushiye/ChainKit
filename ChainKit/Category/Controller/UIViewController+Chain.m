@@ -7,6 +7,7 @@
 //
 
 #import "UIViewController+Chain.h"
+#import "UIAlertController+Chain.h"
 
 @implementation UIViewController (Chain)
 
@@ -54,6 +55,22 @@
         if ([self isKindOfClass:[UIViewController class]]) {
             self.automaticallyAdjustsScrollViewInsets = isAdjusts;
         }
+    };
+}
+
+#pragma mark - UIAlertController
+
+- (CVCAlertTitleSheetItemsActionHandler)cvc_showSheetControllerByTitleNamesCompleted {
+    return ^ (NSString * title, NSArray<NSString *> * itemNames, CACSelectedSheetHandler selectedHandler) {
+        UIAlertController *alertController = UIAlertController.cac_alertControllerWithTitleSheetNamesSelectedCompleted(title, itemNames, selectedHandler);
+        self.cvc_presentVCAnimatedCompletion(alertController, YES, nil);
+    };
+}
+
+- (CVCAlertInputTextsHandler)cvc_showInputControllerByTitlePlaceholdersCompleted {
+    return ^ (NSString * title, NSArray<NSString *> * placeholders, CACInputTextFieldTextsHandler inputComplete) {
+        UIAlertController *alertController = UIAlertController.cac_alertControllerWithTitlePlaceholdersForInputCompleted(title, placeholders, inputComplete);
+        self.cvc_presentVCAnimatedCompletion(alertController, YES, nil);
     };
 }
 

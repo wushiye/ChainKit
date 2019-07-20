@@ -149,8 +149,22 @@ typedef UINavigationItem* _Nonnull (^CNIStringHandleCallback)(NSString * __nulla
 //typedef UIBarButtonItem* (^CBBItemActionHandleCallback)(NSString *, id __nullable, SEL _Nonnull);
 
 
+
+typedef void (^ __nullable CACSelectedSheetHandler)(NSUInteger);
+typedef UIAlertController* __nullable (^ __nullable CACSheetTitleItemsActionHandler)(NSString * nullable, NSArray<NSString *> * nonnull, CACSelectedSheetHandler);
+
+
+typedef void (^ __nullable CACInputTextFieldTextsHandler)(NSArray<NSString *> * __nullable);
+typedef UIAlertController* __nullable (^ __nullable CACInputTextFieldsHandler)(NSString * nullable, NSArray<NSString *> * nonnull, CACInputTextFieldTextsHandler);
+
+
+
 typedef void (^ __nullable CVCModalHandleCompletion)(void);
 typedef void (^CVCModalControllerHandleCallback)(UIViewController * _Nonnull  , BOOL, CVCModalHandleCompletion __nullable);
+
+typedef void (^ __nullable CVCAlertTitleSheetItemsActionHandler)(NSString * nullable, NSArray<NSString *> * nonnull, CACSelectedSheetHandler __nullable);
+
+typedef void (^ __nullable CVCAlertInputTextsHandler)(NSString * nullable, NSArray<NSString *> * nonnull, CACInputTextFieldTextsHandler __nullable);
 
 
 #endif /* ChainBlockType_h */

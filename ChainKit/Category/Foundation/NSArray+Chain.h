@@ -6,7 +6,7 @@
 //  Copyright © 2019 apple. All rights reserved.
 //
 
-#import "ChainBlockType.h"
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

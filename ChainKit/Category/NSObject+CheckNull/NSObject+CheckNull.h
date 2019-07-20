@@ -17,9 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
  e.g.
  NSObject *object = [NSObject objectCheckNull:obj replaceObject:@""];
  
- @param beObj 不为nil / null
  @param obj 可为nil / null
-*/
+ @param beObj 不为nil / null
+ */
 + (id)objectCheckNull:(id __nullable)obj replaceObject:(id _Nonnull)beObj;
 
 @end
