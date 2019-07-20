@@ -11,17 +11,15 @@
 @implementation NSArray (Chain)
 
 - (id)ca_objectCheckAtIndex:(NSUInteger)index {
-    return ^(NSUInteger index) {
-        id object = nil;
-        
-        if (index >= self.count) return object;
-        
-        object = [self objectAtIndex:index];
-        
-        if (object == [NSNull null] || [object isKindOfClass:[NSNull class]]) return object = nil;
-        
-        return object;
-    };
+    id object = nil;
+    
+    if (index >= self.count) return object;
+    
+    object = [self objectAtIndex:index];
+    
+    if (object == [NSNull null] || [object isKindOfClass:[NSNull class]]) return object = nil;
+    
+    return object;
 }
 
 @end
