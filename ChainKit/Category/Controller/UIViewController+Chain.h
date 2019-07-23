@@ -28,6 +28,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  e.g.
+ self.cvc_showAlertControllerByTitleDescrConfirmCompleted(@"AlertVC", @"descr..", @"confirm", ^() {
+ 
+ });
+ */
+- (CVCAlertConfrimHandler)cvc_showAlertControllerByTitleDescrConfirmCompleted;
+
+/**
+ e.g.
  self.cvc_showSheetControllerByTitleNamesCompleted(@"SheetAlertVC", @[@"第0项", @"第1项", @"第2项"], ^(NSUInteger index) {
  DLog(@"index == %lu", index);
  });

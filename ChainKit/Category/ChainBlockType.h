@@ -150,21 +150,27 @@ typedef UINavigationItem* _Nonnull (^CNIStringHandleCallback)(NSString * __nulla
 
 
 
+typedef UIAlertController* _Nullable (^ __nullable CACConfirmHandler)(NSString * __nullable, NSString * __nullable, NSString * __nullable, NSString * __nullable, CHandleCallback __nullable);
+
 typedef void (^ __nullable CACSelectedSheetHandler)(NSUInteger);
-typedef UIAlertController* __nullable (^ __nullable CACSheetTitleItemsActionHandler)(NSString * nullable, NSArray<NSString *> * nonnull, CACSelectedSheetHandler);
+typedef UIAlertController* _Nullable (^ __nullable CACSheetTitleItemsActionHandler)(NSString * __nullable, NSArray<NSString *> * _Nonnull, CACSelectedSheetHandler __nullable);
 
 
 typedef void (^ __nullable CACInputTextFieldTextsHandler)(NSArray<NSString *> * __nullable);
-typedef UIAlertController* __nullable (^ __nullable CACInputTextFieldsHandler)(NSString * nullable, NSArray<NSString *> * nonnull, CACInputTextFieldTextsHandler);
+typedef UIAlertController* _Nullable (^ __nullable CACInputTextFieldsHandler)(NSString * __nullable, NSArray<NSString *> * _Nonnull, CACInputTextFieldTextsHandler __nullable);
+
 
 
 
 typedef void (^ __nullable CVCModalHandleCompletion)(void);
 typedef void (^CVCModalControllerHandleCallback)(UIViewController * _Nonnull  , BOOL, CVCModalHandleCompletion __nullable);
 
-typedef void (^ __nullable CVCAlertTitleSheetItemsActionHandler)(NSString * nullable, NSArray<NSString *> * nonnull, CACSelectedSheetHandler __nullable);
+typedef void (^ __nullable CVCAlertTitleSheetItemsActionHandler)(NSString * __nullable, NSArray<NSString *> * __nullable, CACSelectedSheetHandler __nullable);
 
-typedef void (^ __nullable CVCAlertInputTextsHandler)(NSString * nullable, NSArray<NSString *> * nonnull, CACInputTextFieldTextsHandler __nullable);
+typedef void (^ __nullable CVCAlertInputTextsHandler)(NSString * __nullable, NSArray<NSString *> * __nullable, CACInputTextFieldTextsHandler __nullable);
+
+typedef void (^ __nullable CVCAlertConfrimHandler)(NSString * __nullable, NSString * __nullable, NSString * __nullable, CHandleCallback __nullable);
+
 
 
 #endif /* ChainBlockType_h */
