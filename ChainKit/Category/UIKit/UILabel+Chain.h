@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CLStringHandleCallback)cl_text;
 
+- (UILabel* void (^)(NSTextAlignment))cl_textAlignment
+
 - (CLRGBColorHandleCallback)cl_textColorRGB;
 
 - (CLColorHandleCallback)cl_textColor;
