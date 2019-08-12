@@ -17,6 +17,11 @@
         return [[self alloc] init];
     };
 }
+    
++ (id (^)(void))cv_viewFromNibLoad {
+    NSString * const className = NSStringFromClass([self class]);
+    return [[NSBundle mainBundle] loadNibNamed:className owner:nil options:nil].lastObject;
+}
 
 + (UIView* (^)(CGRect))cv_viewWithFrame {
     return ^(CGRect frame) {

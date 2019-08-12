@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIView (Chain)
 
 + (UIView* (^)(void))cv_view;
+    
++ (id (^)(void))cv_viewFromNibLoad;
 
 + (UIView* (^)(CGRect))cv_viewWithFrame;
 

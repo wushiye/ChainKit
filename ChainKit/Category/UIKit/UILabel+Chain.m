@@ -45,7 +45,7 @@
     };
 }
 
-- (UILabel* void (^)(NSTextAlignment))cl_textAlignment {
+- (UILabel* (^)(NSTextAlignment))cl_textAlignment {
     return ^(NSTextAlignment textAlignment) {
         self.textAlignment = textAlignment;
         return self;
