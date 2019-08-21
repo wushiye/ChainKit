@@ -101,8 +101,15 @@
 }
 
 - (CTFHasTextHandleCallback)ctf_hasText {
-    return ^() {
+    return ^{
         return self.hasText;
+    };
+}
+
+- (CTFSecureTextEntryHandler)ctf_secureTextEntry {
+    return ^(BOOL isSecure) {
+        self.secureTextEntry = isSecure;
+        return self;
     };
 }
 

@@ -12,7 +12,7 @@
 @implementation UIViewController (Chain)
 
 + (UIViewController* (^)(void))cvc_controller {
-    return ^() {
+    return ^{
         return [[self alloc] init];
     };
 }

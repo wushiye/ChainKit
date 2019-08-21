@@ -10,18 +10,16 @@
 
 @implementation UICollectionView (Chain)
 
-- (UICollectionView* (^)(void))ccv_registerNib {
-    return ^{
-        NSString * const reuseIdentifier = NSStringFromClass([self class]);
-        [self registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+- (UICollectionView* (^)(NSString * const _Nonnull))ccv_registerNibName {
+    return ^(NSString * const _Nonnull aClassNamee) {
+        [self registerNib:[UINib nibWithNibName:aClassNamee bundle:nil] forCellWithReuseIdentifier:aClassNamee];
         return self;
     };
 }
 
-- (UICollectionView* (^)(void))ccv_registerClass {
-    return ^{
-        Class class = [self class];
-        [self registerClass:class forCellWithReuseIdentifier:NSStringFromClass(class)];
+- (UICollectionView* (^)(Class _Nonnull aClass))ccv_registerClass {
+    return ^(Class aClass) {
+        [self registerClass:aClass forCellWithReuseIdentifier:NSStringFromClass(aClass)];
         return self;
     };
 }

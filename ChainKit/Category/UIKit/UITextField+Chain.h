@@ -38,6 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CTFHasTextHandleCallback)ctf_hasText;
 
+- (CTFSecureTextEntryHandler)ctf_secureTextEntry;
+
 - (CTFClearModeHandleCallback)ctf_clearButtonMode;
 
 - (CTFReturnKeyTypeHandleCallback)ctf_returnKeyType;

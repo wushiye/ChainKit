@@ -93,6 +93,8 @@ typedef UITextField* _Nonnull (^CTFBorderStyleHandleCallback)(UITextBorderStyle)
 
 typedef BOOL (^CTFHasTextHandleCallback)(void);
 
+typedef UITextField* _Nonnull (^CTFSecureTextEntryHandler)(BOOL);
+
 typedef UITextField* _Nonnull (^CTFClearModeHandleCallback)(UITextFieldViewMode clearButtonMode);
 
 typedef UITextField* _Nonnull (^CTFReturnKeyTypeHandleCallback)(UIReturnKeyType);

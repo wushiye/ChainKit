@@ -104,7 +104,7 @@
 //            if (@available(iOS 10.0, *)) { // iOS 10 SDK
                 self.refreshControl = refreshControl;
 //            } else {
-//                // Fallback on earlier versions
+                // Fallback on earlier versions
 //            }
         }
         return self;
