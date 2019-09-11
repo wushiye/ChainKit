@@ -22,13 +22,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void (^ __nullable)(BOOL))cvc_automaticallyAdjustsScrollViewInsets;
 
+- (UIViewController* (^)(BOOL))cvc_hidesBottomBarWhenPushed;
 
 
 #pragma mark - UIAlertController
 
 /**
  e.g.
- self.cvc_showAlertControllerByTitleDescrConfirmCompleted(@"AlertVC", @"descr..", @"confirm", ^() {
+ self.cvc_showAlertControllerByTitleDescrConfirmCompleted(@"AlertVC", @"descr..", @"confirm", ^{
  
  });
  */
@@ -37,15 +38,15 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  e.g.
  self.cvc_showSheetControllerByTitleNamesCompleted(@"SheetAlertVC", @[@"第0项", @"第1项", @"第2项"], ^(NSUInteger index) {
- DLog(@"index == %lu", index);
+    DLog(@"index == %lu", index);
  });
  */
 - (CVCAlertTitleSheetItemsActionHandler)cvc_showSheetControllerByTitleNamesCompleted;
 
 /**
  e.g.
- weak_self.cvc_showInputControllerByTitlePlaceholdersCompleted(@"TextFields AlertVC", @[@"请输入第0项", @"请输入第1项", @"请输入第2项"], ^(NSArray<NSString *> * texts) {
- DLog(@"input texts == %@", texts);
+ self.cvc_showInputControllerByTitlePlaceholdersCompleted(@"TextFields AlertVC", @[@"请输入第0项", @"请输入第1项", @"请输入第2项"], ^(NSArray<NSString *> * texts) {
+    DLog(@"input texts == %@", texts);
  });
  */
 - (CVCAlertInputTextsHandler)cvc_showInputControllerByTitlePlaceholdersCompleted;

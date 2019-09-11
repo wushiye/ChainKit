@@ -16,7 +16,9 @@ typedef UINavigationController* _Nonnull (^CNCInitRootVCHandleCallback)(UIViewCo
 
 + (CNCInitRootVCHandleCallback)cnc_initWithRootViewController;
 
-- (void (^)(UIViewController *, BOOL))cnc_pushViewControllerDidAnimated;
+- (void (^)(UIViewController * _Nonnull, BOOL))cnc_pushViewControllerDidAnimated;
+
+- (void (^)(NSString * _Nonnull, BOOL))cnc_pushClassNameDidAnimated;
 
 - (void (^)(BOOL))cnc_popViewControllerDidAnimated;
 

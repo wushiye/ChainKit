@@ -16,10 +16,19 @@
     };
 }
 
-- (void (^)(UIViewController *, BOOL))cnc_pushViewControllerDidAnimated {
-    return ^(UIViewController *vc, BOOL isAnimated) {
+- (void (^)(UIViewController * _Nonnull, BOOL))cnc_pushViewControllerDidAnimated {
+    return ^(UIViewController * _Nonnull controller, BOOL isAnimated) {
         if ([self isKindOfClass:[UINavigationController class]]) {
-            [self pushViewController:vc animated:isAnimated];
+            [self pushViewController:controller animated:isAnimated];
+        }
+    };
+}
+
+- (void (^)(NSString * _Nonnull, BOOL))cnc_pushClassNameDidAnimated {
+    return ^(NSString * _Nonnull aClassName, BOOL isAnimated) {
+        if ([self isKindOfClass:[UINavigationController class]]) {
+            UIViewController *controller = [[NSClassFromString(aClassName) alloc] init];
+            [self pushViewController:controller animated:isAnimated];
         }
     };
 }

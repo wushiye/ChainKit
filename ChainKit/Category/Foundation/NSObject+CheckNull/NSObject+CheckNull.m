@@ -28,13 +28,7 @@
     if ([obj isKindOfClass:[beObj superclass]]) return obj;
     
     
-    if ([beObj isKindOfClass:[NSData class]]) {
-        if ([obj isKindOfClass:[NSData class]]) return obj;
-        
-    } else if ([beObj isKindOfClass:[NSDate class]]) {
-        if ([obj isKindOfClass:[NSDate class]]) return obj;
-        
-    } else if ([beObj isKindOfClass:[NSString class]]) {
+    if ([beObj isKindOfClass:[NSString class]]) {
         if ([obj isKindOfClass:[NSString class]]) return obj;
         
     } else if ([beObj isKindOfClass:[NSArray class]]) {
@@ -49,7 +43,12 @@
     } else if ([beObj isKindOfClass:[NSNumber class]]) {
         if ([obj isKindOfClass:[NSNumber class]]) return obj;
         
-    } // else if () code..
+    } else if ([beObj isKindOfClass:[NSData class]]) {
+        if ([obj isKindOfClass:[NSData class]]) return obj;
+        
+    } else if ([beObj isKindOfClass:[NSDate class]]) {
+        if ([obj isKindOfClass:[NSDate class]]) return obj;
+    }  // else if () code..
     
     return obj;
 }

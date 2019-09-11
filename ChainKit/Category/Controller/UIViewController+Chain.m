@@ -58,6 +58,15 @@
     };
 }
 
+- (UIViewController* (^)(BOOL))cvc_hidesBottomBarWhenPushed {
+    return ^(BOOL isHide) {
+        if ([self isKindOfClass:[UIViewController class]]) {
+            self.automaticallyAdjustsScrollViewInsets = isHide;
+        }
+        return self;
+    };
+}
+
 #pragma mark - UIAlertController
 
 - (CVCAlertConfrimHandler)cvc_showAlertControllerByTitleDescrConfirmCompleted {
