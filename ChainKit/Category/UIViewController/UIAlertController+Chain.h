@@ -2,7 +2,7 @@
 //  UIAlertController+Chain.h
 //  Chain-Master
 //
-//  Created by FMMac on 2019/7/20.
+//  Created by admin 2019/7/20.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
@@ -18,8 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (CACSheetTitleItemsActionHandler)cac_alertControllerWithTitleSheetNamesSelectedCompleted;
 
 + (CACInputTextFieldsHandler)cac_alertControllerWithTitlePlaceholdersForInputCompleted;
-
-
 
 @end
 

@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UICollectionView (Chain)
 
-- (UICollectionView* (^)(NSString * const _Nonnull))ccv_registerNibName;
+- (UICollectionView* (^)(void))ccv_registerNib;
 
-- (UICollectionView* (^)(Class _Nonnull aClass))ccv_registerClass;
+- (UICollectionView* (^)(void))ccv_registerClass;
 
 @end
 

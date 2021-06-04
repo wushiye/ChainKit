@@ -2,7 +2,7 @@
 //  UIScrollView+Chain.m
 //  Chain-Master
 //
-//  Created by FMMac on 2019/3/26.
+//  Created by admin 2019/3/26.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
@@ -104,7 +104,7 @@
 //            if (@available(iOS 10.0, *)) { // iOS 10 SDK
                 self.refreshControl = refreshControl;
 //            } else {
-                // Fallback on earlier versions
+//                // Fallback on earlier versions
 //            }
         }
         return self;

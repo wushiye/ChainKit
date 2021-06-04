@@ -2,7 +2,7 @@
 //  UIButton+Chain.m
 //  Chain-Master
 //
-//  Created by FMMac on 2019/3/17.
+//  Created by admin 2019/3/17.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
@@ -48,7 +48,7 @@
     };
 }
 
-- (CBStringHandleCallback)cb_setImageOfNamed {
+- (CBStringHandleCallback)cb_imageOfNamed {
     return ^(NSString * __nullable imageName) {
         [self setImage:UIImage.ci_imageNamed(imageName) forState:UIControlStateNormal];
         return self;

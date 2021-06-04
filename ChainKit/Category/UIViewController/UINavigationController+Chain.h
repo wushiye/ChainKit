@@ -2,7 +2,7 @@
 //  UINavigationController+Chain.h
 //  Chain-Master
 //
-//  Created by FMMac on 2019/3/27.
+//  Created by admin 2019/3/27.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
@@ -16,9 +16,7 @@ typedef UINavigationController* _Nonnull (^CNCInitRootVCHandleCallback)(UIViewCo
 
 + (CNCInitRootVCHandleCallback)cnc_initWithRootViewController;
 
-- (void (^)(UIViewController * _Nonnull, BOOL))cnc_pushViewControllerDidAnimated;
-
-- (void (^)(NSString * _Nonnull, BOOL))cnc_pushClassNameDidAnimated;
+- (void (^)(UIViewController *, BOOL))cnc_pushViewControllerDidAnimated;
 
 - (void (^)(BOOL))cnc_popViewControllerDidAnimated;
 

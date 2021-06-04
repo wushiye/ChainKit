@@ -2,20 +2,103 @@
 //  UIViewController+Chain.m
 //  Chain-Master
 //
-//  Created by FMMac on 2019/3/26.
+//  Created by admin 2019/3/26.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
 #import "UIViewController+Chain.h"
 #import "UIAlertController+Chain.h"
+#import "NSObject+RuntimeParams.h"
 
 @implementation UIViewController (Chain)
 
-+ (UIViewController* (^)(void))cvc_controller {
+#pragma mark - <Skip Push>
+
+- (CVCSkipTransferCompletion)cvc_pushByClassNameParams {
+    return ^(NSString * _Nullable aClassName, NSDictionary * _Nullable params) {
+        UIViewController *nextController = [[NSClassFromString(aClassName) alloc] initWithParams:params];
+        [self.navigationController pushViewController:nextController animated:YES];
+        return self;
+    };
+}
+
+- (CVCShowClassNameCompletion)cvc_pushControllerByClassName {
+    return ^(NSString * _Nullable aClassName) {
+        UIViewController *nextController = [[NSClassFromString(aClassName) alloc] init];
+        [self.navigationController pushViewController:nextController animated:YES];
+        return self;
+    };
+}
+
+- (CVCShowControllerCompletion)cvc_pushViewController {
+    return ^(UIViewController * _Nullable viewController) {
+        [self.navigationController pushViewController:viewController animated:YES];
+        return self;
+    };
+}
+
+#pragma mark - <Skip Modal>
+
+- (CVCSkipTransferCompletion)cvc_presentByClassNameParams {
+    return ^(NSString * _Nullable aClassName, NSDictionary * _Nullable params) {
+        UIViewController *nextController = [[NSClassFromString(aClassName) alloc] initWithParams:params];
+        [self presentViewController:nextController animated:YES completion:nil];
+        return self;
+    };
+}
+
+- (CVCShowClassNameCompletion)cvc_presentControllerByClassName {
+    return ^(NSString * _Nullable aClassName) {
+        UIViewController *nextController = [[NSClassFromString(aClassName) alloc] init];
+        [self presentViewController:nextController animated:YES completion:nil];
+        return self;
+    };
+}
+
+- (CVCShowControllerCompletion)cvc_presentViewController {
+    return ^(UIViewController * _Nullable viewController) {
+        [self presentViewController:viewController animated:YES completion:nil];
+        return self;
+    };
+}
+
+#pragma mark - <Skip Show>
+
+- (CVCSkipTransferCompletion)cvc_showByClassNameParams {
+    return ^(NSString * _Nullable aClassName, NSDictionary * _Nullable params) {
+        UIViewController *nextController = [[NSClassFromString(aClassName) alloc] initWithParams:params];
+        self.cvc_showViewController(nextController);
+        return self;
+    };
+}
+
+- (CVCShowClassNameCompletion)cvc_showVCByClassName {
+    return ^(NSString * _Nullable aClassName) {
+        UIViewController *nextController = [[NSClassFromString(aClassName) alloc] init];
+        self.cvc_showViewController(nextController);
+        return self;
+    };
+}
+
+- (CVCShowControllerCompletion)cvc_showViewController {
+    return ^(UIViewController * _Nullable viewController) {
+        if (self.navigationController) {
+            [self.navigationController pushViewController:viewController animated:YES];
+        } else {
+            [self presentViewController:viewController animated:YES completion:nil];
+        }
+        return self;
+    };
+}
+
+
++ (instancetype (^)(void))cvc_controller {
     return ^{
         return [[self alloc] init];
     };
 }
+
+
 
 - (CVCModalControllerHandleCallback)cvc_presentVCAnimatedCompletion {
     return ^(UIViewController *controller, BOOL isAnimated, CVCModalHandleCompletion __nullable completion) {
@@ -28,6 +111,8 @@
         self.cvc_modalViewControllerHandleCompletionForIsPresent(NO, nil, isAnimated, completion);
     };
 }
+
+#pragma mark - Private
 
 - (void (^)(BOOL, UIViewController *, BOOL, CVCModalHandleCompletion __nullable))cvc_modalViewControllerHandleCompletionForIsPresent {
     return ^(BOOL isPresent, UIViewController *controller, BOOL isAnimated, CVCModalHandleCompletion __nullable completion) {
@@ -55,15 +140,6 @@
         if ([self isKindOfClass:[UIViewController class]]) {
             self.automaticallyAdjustsScrollViewInsets = isAdjusts;
         }
-    };
-}
-
-- (UIViewController* (^)(BOOL))cvc_hidesBottomBarWhenPushed {
-    return ^(BOOL isHide) {
-        if ([self isKindOfClass:[UIViewController class]]) {
-            self.automaticallyAdjustsScrollViewInsets = isHide;
-        }
-        return self;
     };
 }
 

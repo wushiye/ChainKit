@@ -2,7 +2,7 @@
 //  UITableViewCell+Chain.m
 //  Chain-Master
 //
-//  Created by FMMac on 2019/3/27.
+//  Created by admin 2019/3/27.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
@@ -56,7 +56,7 @@ typedef NS_ENUM(NSUInteger, CTCTableViewCellType) {
 - (UITableViewCell* (^)(UIColor * __nullable))ctc_selectedColor {
     return ^(UIColor * __nullable color) {
         if ([self isKindOfClass:[UITableViewCell class]]) {
-//            self.ctc_selectionStyle(UITableViewCellSelectionStyleDefault);
+            self.ctc_selectionStyle(UITableViewCellSelectionStyleDefault);
             UIColor *defaultColor = UIColor.cc_colorByRGBA(0.0f, 0.0f, 0.0f, 0.05f);
             self.selectedBackgroundView = UIView.cv_view().cv_backColor(color ?: defaultColor);
         }

@@ -2,7 +2,7 @@
 //  UIView+Chain.h
 //  Chain-Master
 //
-//  Created by FMMac on 2019/3/18.
+//  Created by admin 2019/3/18.
 //  Copyright © 2019 apple. All rights reserved.
 //
 

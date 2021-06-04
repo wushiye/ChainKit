@@ -2,7 +2,7 @@
 //  UITextField+Chain.h
 //  Chain-Master
 //
-//  Created by FMMac on 2019/3/23.
+//  Created by admin 2019/3/23.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
@@ -32,13 +32,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CTFTextColorRGBAHandleCallback)ctf_placeholderTextColorRGBA;
 
-- (CTFFontSizeHandleCallback)ctf_placeholderFontSize;
+//- (CTFFontSizeHandleCallback)ctf_placeholderFontSize;
 
 - (CTFBorderStyleHandleCallback)ctf_borderStyle;
 
 - (CTFHasTextHandleCallback)ctf_hasText;
-
-- (CTFSecureTextEntryHandler)ctf_secureTextEntry;
 
 - (CTFClearModeHandleCallback)ctf_clearButtonMode;
 

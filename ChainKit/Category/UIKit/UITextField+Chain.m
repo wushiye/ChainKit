@@ -2,7 +2,7 @@
 //  UITextField+Chain.m
 //  Chain-Master
 //
-//  Created by FMMac on 2019/3/23.
+//  Created by admin 2019/3/23.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
@@ -76,7 +76,7 @@
 - (CTFTextColorHandleCallback)ctf_placeholderTextColor {
     return ^(UIColor * __nullable color) {
         if ([self ctf_isKindClassUITextField]) {
-            [self setValue:color forKeyPath:@"_placeholderLabel.textColor"];
+            self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:@{NSForegroundColorAttributeName:color}];
         }
         return self;
     }; 
@@ -85,31 +85,24 @@
 - (CTFTextColorRGBAHandleCallback)ctf_placeholderTextColorRGBA {
     return ^(CGFloat red, CGFloat green, CGFloat blue, CGFloat alpha) {
         if ([self ctf_isKindClassUITextField]) {
-            [self setValue:self.ctf_colorByRGBA(red, green, blue, alpha) forKeyPath:@"_placeholderLabel.textColor"];
+            self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:@{NSForegroundColorAttributeName:self.ctf_colorByRGBA(red, green, blue, alpha)}];
         }
         return self;
     };
 }
 
-- (CTFFontSizeHandleCallback)ctf_placeholderFontSize {
-    return ^(CGFloat fontSize) {
-        if ([self ctf_isKindClassUITextField]) {
-            [self setValue:[UIFont boldSystemFontOfSize:fontSize] forKeyPath:@"_placeholderLabel.font"];
-        }
-        return self;
-    };
-}
+//- (CTFFontSizeHandleCallback)ctf_placeholderFontSize {
+//    return ^(CGFloat fontSize) {
+//        if ([self ctf_isKindClassUITextField]) {
+//            self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:fontSize]}];
+//        }
+//        return self;
+//    };
+//}
 
 - (CTFHasTextHandleCallback)ctf_hasText {
-    return ^{
+    return ^() {
         return self.hasText;
-    };
-}
-
-- (CTFSecureTextEntryHandler)ctf_secureTextEntry {
-    return ^(BOOL isSecure) {
-        self.secureTextEntry = isSecure;
-        return self;
     };
 }
 

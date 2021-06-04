@@ -2,7 +2,7 @@
 //  UINavigationController+Chain.m
 //  Chain-Master
 //
-//  Created by FMMac on 2019/3/27.
+//  Created by admin 2019/3/27.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
@@ -16,19 +16,10 @@
     };
 }
 
-- (void (^)(UIViewController * _Nonnull, BOOL))cnc_pushViewControllerDidAnimated {
-    return ^(UIViewController * _Nonnull controller, BOOL isAnimated) {
+- (void (^)(UIViewController *, BOOL))cnc_pushViewControllerDidAnimated {
+    return ^(UIViewController *vc, BOOL isAnimated) {
         if ([self isKindOfClass:[UINavigationController class]]) {
-            [self pushViewController:controller animated:isAnimated];
-        }
-    };
-}
-
-- (void (^)(NSString * _Nonnull, BOOL))cnc_pushClassNameDidAnimated {
-    return ^(NSString * _Nonnull aClassName, BOOL isAnimated) {
-        if ([self isKindOfClass:[UINavigationController class]]) {
-            UIViewController *controller = [[NSClassFromString(aClassName) alloc] init];
-            [self pushViewController:controller animated:isAnimated];
+            [self pushViewController:vc animated:isAnimated];
         }
     };
 }

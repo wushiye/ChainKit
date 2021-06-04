@@ -2,7 +2,7 @@
 //  NSString+Chain.h
 //  Chain-Master
 //
-//  Created by FMMac on 2019/4/9.
+//  Created by admin 2019/4/9.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
@@ -17,9 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** CString -> NSString */
 + (NSString * __nullable (^)(char *))cs_stringWithCString;
-
-/** NSData -> NSString */
-+ (NSString * __nullable (^)(NSData *))cs_stringWithData;
 
 @end
 

@@ -2,7 +2,7 @@
 //  UIButton+Chain.h
 //  Chain-Master
 //
-//  Created by FMMac on 2019/3/17.
+//  Created by admin 2019/3/17.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CBContentForStateHandle)cb_setTitleForState;
 
-- (CBStringHandleCallback)cb_setImageOfNamed;
+- (CBStringHandleCallback)cb_imageOfNamed;
 
 - (CBContentForStateHandle)cb_setImageOfNamedForState;
 

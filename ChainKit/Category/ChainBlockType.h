@@ -2,7 +2,7 @@
 //  ChainBlockType.h
 //  Chain-Master
 //
-//  Created by FMMac on 2019/3/18.
+//  Created by admin 2019/3/18.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
@@ -93,8 +93,6 @@ typedef UITextField* _Nonnull (^CTFBorderStyleHandleCallback)(UITextBorderStyle)
 
 typedef BOOL (^CTFHasTextHandleCallback)(void);
 
-typedef UITextField* _Nonnull (^CTFSecureTextEntryHandler)(BOOL);
-
 typedef UITextField* _Nonnull (^CTFClearModeHandleCallback)(UITextFieldViewMode clearButtonMode);
 
 typedef UITextField* _Nonnull (^CTFReturnKeyTypeHandleCallback)(UIReturnKeyType);
@@ -173,7 +171,10 @@ typedef void (^ __nullable CVCAlertInputTextsHandler)(NSString * __nullable, NSA
 
 typedef void (^ __nullable CVCAlertConfrimHandler)(NSString * __nullable, NSString * __nullable, NSString * __nullable, CHandleCallback __nullable);
 
+typedef UIViewController* _Nullable (^ __nullable CVCShowClassNameCompletion)(NSString * _Nonnull);
 
+typedef UIViewController* _Nullable (^ __nullable CVCSkipTransferCompletion)(NSString * _Nonnull, NSDictionary * _Nonnull);
+
+typedef UIViewController* _Nullable (^ __nullable CVCShowControllerCompletion)(UIViewController * _Nonnull);
 
 #endif /* ChainBlockType_h */
-

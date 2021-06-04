@@ -2,7 +2,7 @@
 //  UIControl+Chain.h
 //  Chain-Master
 //
-//  Created by FMMac on 2019/3/23.
+//  Created by admin 2019/3/23.
 //  Copyright © 2019 apple. All rights reserved.
 //
 

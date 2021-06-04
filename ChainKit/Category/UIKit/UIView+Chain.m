@@ -2,7 +2,7 @@
 //  UIView+Chain.m
 //  Chain-Master
 //
-//  Created by FMMac on 2019/3/18.
+//  Created by admin 2019/3/18.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
@@ -19,8 +19,9 @@
 }
     
 + (id (^)(void))cv_viewFromNibLoad {
-    NSString * const className = NSStringFromClass([self class]);
-    return [[NSBundle mainBundle] loadNibNamed:className owner:nil options:nil].lastObject;
+    return ^{
+        return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil].lastObject;
+    };
 }
 
 + (UIView* (^)(CGRect))cv_viewWithFrame {
@@ -165,7 +166,7 @@
 }
     
 - (CVAddEndEditingHandleCallback)cv_endEditing {
-    return ^(void) {
+    return ^{
         if ([self isKindOfClass:[UIView class]]) {
             [self endEditing:YES];
         }

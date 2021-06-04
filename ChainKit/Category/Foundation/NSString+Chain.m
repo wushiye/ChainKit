@@ -2,7 +2,7 @@
 //  NSString+Chain.m
 //  Chain-Master
 //
-//  Created by FMMac on 2019/4/9.
+//  Created by admin 2019/4/9.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
@@ -23,12 +23,6 @@
 + (NSString * __nullable (^)(char *))cs_stringWithCString {
     return ^(char *cString) {
         return [NSString stringWithCString:cString encoding:NSUTF8StringEncoding];
-    };
-}
-
-+ (NSString * __nullable (^)(NSData *))cs_stringWithData {
-    return ^(NSData *data) {
-        return [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     };
 }
 
